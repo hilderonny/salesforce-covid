@@ -26,12 +26,21 @@
         <name>CustomObject</name>
     </types>
     <types>
+        <members>Corona_World_Map</members>
         <members>Infection_status__c</members>
         <name>CustomTab</name>
     </types>
     <types>
+        <members>Corona_World_Map</members>
+        <name>FlexiPage</name>
+    </types>
+    <types>
         <members>Infection_status__c-Infection status Layout</members>
         <name>Layout</name>
+    </types>
+    <types>
+        <members>leafletMap</members>
+        <name>LightningComponentBundle</name>
     </types>
     <types>
         <members>Infection_status__c.All</members>
@@ -40,6 +49,10 @@
     <types>
         <members>Corona_API</members>
         <name>NamedCredential</name>
+    </types>
+    <types>
+        <members>leaflet</members>
+        <name>StaticResource</name>
     </types>
     <version>48.0</version>
 </Package>

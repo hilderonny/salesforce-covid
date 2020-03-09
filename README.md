@@ -13,3 +13,7 @@ For progress statistics the field history tracking feature of salesforce is used
 
 This project is meantioned for every organization which has international relations and want to have actual data about the COVID-19 virus status of the countries of its business relationships.
 
+## Technologies
+
+As map resource [Leaflet.js](https://leafletjs.com/) is used. For the implementation I followed [this article](https://www.forcetalks.com/blog/introduction-of-leaflet-map-in-salesforce-lightning-component/) and [these hints](https://salesforce.stackexchange.com/a/254218) and [this doc](https://developer.salesforce.com/docs/component-library/bundle/lightning-platform-resource-loader/documentation).
+

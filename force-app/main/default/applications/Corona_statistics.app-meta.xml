@@ -13,6 +13,7 @@
     <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
     <label>Corona statistics</label>
     <navType>Standard</navType>
+    <tabs>Corona_World_Map</tabs>
     <tabs>Infection_status__c</tabs>
     <uiType>Lightning</uiType>
     <utilityBar>Corona_statistics_UtilityBar</utilityBar>
