@@ -39,6 +39,7 @@
         <name>Layout</name>
     </types>
     <types>
+        <members>lightningMap</members>
         <members>leafletMap</members>
         <name>LightningComponentBundle</name>
     </types>
