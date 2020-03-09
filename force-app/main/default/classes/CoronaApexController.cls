@@ -1,13 +1,17 @@
 public with sharing class CoronaApexController {
 
+    private class Location {
+        public Decimal lat;
+        public Decimal lng;
+    }
+
     private class CoronaResponse {
-        public String country;
-        public Integer cases;
-        public Integer todayCases;
+        public String provincestate;
+        public String countryregion;
+        public Location location;
+        public Integer confirmed;
         public Integer deaths;
-        public Integer todayDeaths;
         public Integer recovered;
-        public Integer critical;
     }
 
     /**
@@ -22,27 +26,36 @@ public with sharing class CoronaApexController {
         HttpResponse response = http.send(request);
         String responseText = response.getBody();
         List<CoronaResponse> infections = (List<CoronaResponse>)JSON.deserialize(responseText, List<CoronaResponse>.class);
-        List<Infection_status__c> statuses = [SELECT Id, Country__c, Cases__c, Cases_today__c, Critical__c, Deaths__c, Deaths_today__c, Recovered__c FROM Infection_status__c];
+        List<Infection_status__c> statuses = [SELECT Id, Confirmed__c, Country__c, Deaths__c, Lat__c, Lon__c, Recovered__c FROM Infection_status__c];
         Map<String, Infection_status__c> countryMap = new Map<String, Infection_status__c>();
         for (Infection_status__c status : statuses) {
             countryMap.put(status.Country__c, status);
         }
         for (CoronaResponse infection : infections) {
             Infection_status__c status;
-            if (countryMap.containsKey(infection.country)) {
-                status = countryMap.get(infection.country);
+            String countryKey = String.isBlank(infection.provincestate) ? infection.countryregion : infection.provincestate + ' ' + infection.countryregion;
+            if (String.isBlank(countryKey)) continue;
+            if (countryMap.containsKey(countryKey)) {
+                status = countryMap.get(countryKey);
             } else {
                 status = new Infection_status__c();
-                status.Country__c = infection.country;
+                status.Country__c = countryKey;
 	            statuses.add(status);
             }
-            status.Cases__c = infection.cases;
-            status.Cases_today__c = infection.todayCases;
-            status.Critical__c = infection.critical;
+            status.Confirmed__c = infection.confirmed;
             status.Deaths__c = infection.deaths;
-            status.Deaths_today__c = infection.todayDeaths;
+            if (infection.location != null) {
+                status.Lat__c = infection.location.lat;
+                status.Lon__c = infection.location.lng;
+            }
             status.Recovered__c = infection.recovered;
         }
         upsert(statuses);
     }
+    
+    @AuraEnabled
+    public static List<Infection_status__c> getInfections() {
+        return [SELECT Id, Confirmed__c, Country__c, Deaths__c, Lat__c, Lon__c, Recovered__c FROM Infection_status__c];
+    }
+
 }

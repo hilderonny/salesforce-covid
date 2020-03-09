@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>Cases__c</fullName>
-    <description>Reported infections</description>
+    <fullName>Lon__c</fullName>
+    <description>Newly reported deaths today</description>
     <externalId>false</externalId>
-    <inlineHelpText>Reported infections</inlineHelpText>
-    <label>Cases</label>
+    <inlineHelpText>Newly reported deaths today</inlineHelpText>
+    <label>Lon</label>
     <precision>18</precision>
     <required>false</required>
-    <scale>0</scale>
+    <scale>10</scale>
     <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>
     <type>Number</type>

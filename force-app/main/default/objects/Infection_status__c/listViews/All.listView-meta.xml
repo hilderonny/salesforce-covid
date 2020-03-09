@@ -3,10 +3,10 @@
     <fullName>All</fullName>
     <columns>NAME</columns>
     <columns>Country__c</columns>
-    <columns>Cases__c</columns>
+    <columns>Confirmed__c</columns>
     <columns>Deaths__c</columns>
     <columns>Recovered__c</columns>
-    <columns>Critical__c</columns>
+    <columns>Lat__c</columns>
     <columns>LAST_UPDATE</columns>
     <filterScope>Everything</filterScope>
     <label>All</label>

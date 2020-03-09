@@ -13,11 +13,11 @@
         <name>CustomApplication</name>
     </types>
     <types>
-        <members>Infection_status__c.Cases__c</members>
-        <members>Infection_status__c.Cases_today__c</members>
-        <members>Infection_status__c.Critical__c</members>
+        <members>Infection_status__c.Confirmed__c</members>
+        <members>Infection_status__c.Country__c</members>
         <members>Infection_status__c.Deaths__c</members>
-        <members>Infection_status__c.Deaths_today__c</members>
+        <members>Infection_status__c.Lat__c</members>
+        <members>Infection_status__c.Lon__c</members>
         <members>Infection_status__c.Recovered__c</members>
         <name>CustomField</name>
     </types>
