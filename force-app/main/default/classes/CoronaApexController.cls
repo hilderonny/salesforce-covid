@@ -35,6 +35,7 @@ public with sharing class CoronaApexController {
             Infection_status__c status;
             String countryKey = String.isBlank(infection.provincestate) ? infection.countryregion : infection.provincestate + ' ' + infection.countryregion;
             if (String.isBlank(countryKey)) continue;
+            countryKey = countryKey.trim(); // Sometimes there are trailing spaces in Montreal
             if (countryMap.containsKey(countryKey)) {
                 status = countryMap.get(countryKey);
             } else {
