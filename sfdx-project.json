@@ -7,8 +7,8 @@
         {
             "path": ".\\force-app",
             "package": "covidmap",
-            "versionName": "ver 0.4",
-            "versionNumber": "0.4.0.NEXT",
+            "versionName": "ver 0.6",
+            "versionNumber": "0.6.0.NEXT",
             "default": false
         }
     ],
@@ -17,6 +17,8 @@
     "sourceApiVersion": "48.0",
     "packageAliases": {
         "covidmap": "0Ho3X0000008OPLSA2",
-        "covidmap@0.2.0-1": "04t3X000002tu8gQAA"
+        "covidmap@0.2.0-1": "04t3X000002tu8gQAA",
+        "covidmap@0.4.0-1": "04t3X000002tuPlQAI",
+        "covidmap@0.5.0-1": "04t3X000002tuohQAA"
     }
 }

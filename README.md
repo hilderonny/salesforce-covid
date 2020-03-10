@@ -19,7 +19,16 @@ As map resource [Leaflet.js](https://leafletjs.com/) is used. For the implementa
 
 ## Installation
 
+After package installation a named credential must be created.
+
+* Named credential name: Corona_API
+* URL: https://wuhan-coronavirus-api.laeyoung.endpoint.ainize.ai/jhu-edu/latest
+* Identity Type: Anonymous
+* Authentication Protocol: No Authentication
+
 |Version|URL|
 |---|---|
 |ver 0.1|https://login.salesforce.com/packaging/installPackage.apexp?p0=04t3X000002tt8fQAA|
 |ver 0.2|https://login.salesforce.com/packaging/installPackage.apexp?p0=04t3X000002tu8gQAA|
+|ver 0.4|https://login.salesforce.com/packaging/installPackage.apexp?p0=04t3X000002tuPlQAI|
+|ver 0.5|https://login.salesforce.com/packaging/installPackage.apexp?p0=04t3X000002tuohQAA|

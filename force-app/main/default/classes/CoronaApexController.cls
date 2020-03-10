@@ -21,6 +21,7 @@ public with sharing class CoronaApexController {
     @AuraEnabled
     public static void fetch() {
         HttpRequest request = new HttpRequest();
+        // https://developer.salesforce.com/forums/?id=906F0000000BIAJIA4
         request.setEndpoint('callout:Corona_API');
         request.setMethod('GET');
         Http http = new Http();
