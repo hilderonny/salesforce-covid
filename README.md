@@ -17,3 +17,9 @@ This project is meantioned for every organization which has international relati
 
 As map resource [Leaflet.js](https://leafletjs.com/) is used. For the implementation I followed [this article](https://www.forcetalks.com/blog/introduction-of-leaflet-map-in-salesforce-lightning-component/) and [these hints](https://salesforce.stackexchange.com/a/254218) and [this doc](https://developer.salesforce.com/docs/component-library/bundle/lightning-platform-resource-loader/documentation).
 
+## Installation
+
+|Version|URL|
+|---|---|
+|ver 0.1|https://login.salesforce.com/packaging/installPackage.apexp?p0=04t3X000002tt8fQAA|
+|ver 0.2|https://login.salesforce.com/packaging/installPackage.apexp?p0=04t3X000002tu8gQAA|

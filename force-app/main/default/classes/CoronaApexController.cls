@@ -18,6 +18,7 @@ public with sharing class CoronaApexController {
      * Fetch the current statistics from the API
      * and store the data in the custom object.
      */
+    @AuraEnabled
     public static void fetch() {
         HttpRequest request = new HttpRequest();
         request.setEndpoint('callout:Corona_API');

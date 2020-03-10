@@ -1,11 +1,22 @@
 {
-  "packageDirectories": [
-    {
-      "path": "force-app",
-      "default": true
+    "packageDirectories": [
+        {
+            "path": "force-app",
+            "default": true
+        },
+        {
+            "path": ".\\force-app",
+            "package": "covidmap",
+            "versionName": "ver 0.4",
+            "versionNumber": "0.4.0.NEXT",
+            "default": false
+        }
+    ],
+    "namespace": "HaeR",
+    "sfdcLoginUrl": "https://login.salesforce.com",
+    "sourceApiVersion": "48.0",
+    "packageAliases": {
+        "covidmap": "0Ho3X0000008OPLSA2",
+        "covidmap@0.2.0-1": "04t3X000002tu8gQAA"
     }
-  ],
-  "namespace": "HaeR",
-  "sfdcLoginUrl": "https://login.salesforce.com",
-  "sourceApiVersion": "48.0"
 }

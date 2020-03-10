@@ -40,7 +40,6 @@
         <name>Layout</name>
     </types>
     <types>
-        <members>lightningMap</members>
         <members>leafletMap</members>
         <name>LightningComponentBundle</name>
     </types>
@@ -51,10 +50,6 @@
     <types>
         <members>Corona_API</members>
         <name>NamedCredential</name>
-    </types>
-    <types>
-        <members>unfiled$public/New_Infection_status_History_Report_nuf</members>
-        <name>Report</name>
     </types>
     <types>
         <members>leaflet</members>

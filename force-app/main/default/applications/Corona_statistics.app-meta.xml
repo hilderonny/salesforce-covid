@@ -16,5 +16,4 @@
     <tabs>Corona_World_Map</tabs>
     <tabs>Infection_status__c</tabs>
     <uiType>Lightning</uiType>
-    <utilityBar>Corona_statistics_UtilityBar</utilityBar>
 </CustomApplication>
