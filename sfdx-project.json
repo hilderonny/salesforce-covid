@@ -9,7 +9,8 @@
             "package": "covidmap",
             "versionName": "ver 0.6",
             "versionNumber": "0.6.0.NEXT",
-            "default": false
+            "default": false,
+            "postInstallUrl": "https://gitlab.com/hilderonny/salesforce-covid/-/wikis/Installation"
         }
     ],
     "namespace": "HaeR",
