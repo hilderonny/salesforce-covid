@@ -22,10 +22,10 @@ export default class LeafletMap extends LightningElement {
     loadData() {
         getInfections().then((infections) => {
             infections.forEach((infection) => {
-                if (!infection.HaeR__Confirmed__c || infection.HaeR__Confirmed__c < 1 || !infection.HaeR__Lat__c || !infection.HaeR__Lon__c) return;
-                var radius = infection.HaeR__Confirmed__c > 10000 ? 10000 : infection.HaeR__Confirmed__c;
-                var circle = L.circle([infection.HaeR__Lat__c, infection.HaeR__Lon__c], {color: 'red', fillColor: '#f03', fillOpacity: 0.5, radius: radius * 100});
-                circle.bindPopup('<b>' + infection.HaeR__Country__c + '</b><br/><i>Confirmd</i>:' + infection.HaeR__Confirmed__c + '<br/><i>Deaths</i>:' + infection.HaeR__Deaths__c + '<br/><i>Recovered</i>:' + infection.HaeR__Recovered__c);
+                if (!infection.Confirmed || infection.Confirmed < 1 || !infection.Lat || !infection.Lon) return;
+                var radius = infection.Confirmed > 10000 ? 10000 : infection.Confirmed;
+                var circle = L.circle([infection.Lat, infection.Lon], {color: 'red', fillColor: '#f03', fillOpacity: 0.5, radius: radius * 100});
+                circle.bindPopup('<b>' + infection.Country + '</b><br/><i>Confirmd</i>:' + infection.Confirmed + '<br/><i>Deaths</i>:' + infection.Deaths + '<br/><i>Recovered</i>:' + infection.Recovered);
                 circle.addTo(this.map);
             });
         });

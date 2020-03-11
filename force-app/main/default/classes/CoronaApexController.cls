@@ -14,6 +14,17 @@ public with sharing class CoronaApexController {
         public Integer recovered;
     }
 
+    public class InfectionStatus {
+        // Each property which should be available on the client side must be prefixed with @AuraEnabled
+        // See https://developer.salesforce.com/docs/atlas.en-us.lightning.meta/lightning/controllers_server_apex_returning_data.htm
+        @AuraEnabled public Decimal Confirmed;
+        @AuraEnabled public String Country;
+        @AuraEnabled public Decimal Deaths;
+        @AuraEnabled public Decimal Lat;
+        @AuraEnabled public Decimal Lon;
+        @AuraEnabled public Decimal Recovered;
+    }
+
     /**
      * Fetch the current statistics from the API
      * and store the data in the custom object.
@@ -57,8 +68,21 @@ public with sharing class CoronaApexController {
     }
     
     @AuraEnabled
-    public static List<Infection_status__c> getInfections() {
-        return [SELECT Id, Confirmed__c, Country__c, Deaths__c, Lat__c, Lon__c, Recovered__c FROM Infection_status__c];
+    public static List<InfectionStatus> getInfections() {
+        // Mapping is needed because on namespace-orgs the field names from the database have a prefix.
+        List<InfectionStatus> infectionsForClient = new List<InfectionStatus>();
+        List<Infection_status__c> infectionsFromDatabase = [SELECT Id, Confirmed__c, Country__c, Deaths__c, Lat__c, Lon__c, Recovered__c FROM Infection_status__c];
+        for (Infection_status__c infectionFromDatabase : infectionsFromDatabase) {
+            InfectionStatus inf = new InfectionStatus();
+            inf.Confirmed = infectionFromDatabase.Confirmed__c;
+            inf.Country = infectionFromDatabase.Country__c;
+            inf.Deaths = infectionFromDatabase.Deaths__c;
+            inf.Lat = infectionFromDatabase.Lat__c;
+            inf.Lon = infectionFromDatabase.Lon__c;
+            inf.Recovered = infectionFromDatabase.Recovered__c;
+            infectionsForClient.add(inf);
+        }
+        return infectionsForClient;
     }
 
 }
