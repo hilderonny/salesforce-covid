@@ -45,6 +45,10 @@
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
     <tabSettings>
+        <tab>Corona_World_Map</tab>
+        <visibility>Visible</visibility>
+    </tabSettings>
+    <tabSettings>
         <tab>Infection_status__c</tab>
         <visibility>Visible</visibility>
     </tabSettings>
